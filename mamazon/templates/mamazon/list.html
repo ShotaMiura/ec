@@ -1,4 +1,4 @@
-{% extends 'mamazon/home.html ' %}
+{% extends 'mamazon/home.html' %}
 {% load static %}
 
 
@@ -9,14 +9,14 @@
 <li class="span3">
     <div class="thumbnail">
         <i class="tag"></i>
-        <a href="product_details.html"><img src="{{object.tumbnail.url}}"
+        <a href="{% url 'mamazon:product-detail' object.pk %}"><img src="{{ object.thumbnail.url }}"
             alt=""></a>
         <div class="caption">
             <h5>{{ object.name }}</h5>
             <p>
                 {{ object.description }}
             </p>
-            <h4><a class="btn" href="product_details.html">VIEW</a>
+            <h4><a class="btn" href="{% url 'mamazon:product-detail' object.pk %}">VIEW</a>
                 <a class="btn btn-primary" href="#">$ {{ object.price }}</a>
             </h4>
         </div>
